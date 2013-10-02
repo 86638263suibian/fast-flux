@@ -8,7 +8,7 @@ try {
     $db = new PDO('mysql:host=localhost;dbname=botnet;charset=utf8', 'LOGIN', 'PASSWORD');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    $db->query('CREATE TABLE IF NOT EXISTS botnet (botnet_ip VARCHAR(15) NOT NULL UNIQUE, botnet_datetime DATETIME NOT NULL, botnet_country TEXT NOT NULL, botnet_asn TEXT NOT NULL)');
+    $db->query('CREATE TABLE IF NOT EXISTS botnet (botnet_ip VARCHAR(15) NOT NULL UNIQUE, botnet_datetime DATETIME NOT NULL, botnet_country TEXT, botnet_asn TEXT)');
 } catch (PDOException $e) {
     print 'Exception : ' . $e->getMessage();
 }
